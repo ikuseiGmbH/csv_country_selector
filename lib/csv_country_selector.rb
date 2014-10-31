@@ -8,7 +8,7 @@ module CsvCountrySelector
 
       #CSV Tabelle als Masterfreferenz
       #Lnd;Kfz;Sprache;ISO-Code;Kurzbez;Bezeichnung;Nationalität;Bezeichnung lang
-      @@codes = CSV.read("#{File.dirname(File.expand_path(__FILE__))}/countries.csv", :col_sep => ";").inject({}){|a,b| a.merge!({b[0] => b[5]})}
+      @@codes = CSV.read("#{File.dirname(File.expand_path(__FILE__))}/csv_country_selector/countries.csv", :col_sep => ";").inject({}){|a,b| a.merge!({b[0] => b[5]})}
 
       def self.short_name_for(name)
         @@codes.select{|k,v| v.downcase == name.downcase}.try(:first).try(:first)
