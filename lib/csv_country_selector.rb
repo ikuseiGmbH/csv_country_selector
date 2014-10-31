@@ -1,14 +1,14 @@
 # encoding: utf-8
 
-require "csv_country_selector/version"
 require 'csv'
+require "csv_country_selector/version"
 
 module CsvCountrySelector
   class Country
 
       #CSV Tabelle als Masterfreferenz
       #Lnd;Kfz;Sprache;ISO-Code;Kurzbez;Bezeichnung;Nationalität;Bezeichnung lang
-      @@codes = CSV.read("countries.csv", :col_sep => ";").inject({}){|a,b| a.merge!({b[0] => b[5]})}
+      @@codes = CSV.read("#{File.dirname(File.expand_path(__FILE__))}/countries.csv", :col_sep => ";").inject({}){|a,b| a.merge!({b[0] => b[5]})}
 
       def self.short_name_for(name)
         @@codes.select{|k,v| v.downcase == name.downcase}.try(:first).try(:first)
