@@ -1,16 +1,14 @@
 # encoding: utf-8
 
 require "csv_country_selector/version"
+require 'csv'
 
 module CsvCountrySelector
   class Country
 
-      spec = Gem::Specification.find_by_name("csv_country_selector")
-      gem_root = spec.gem_dir
-
       #CSV Tabelle als Masterfreferenz
       #Lnd;Kfz;Sprache;ISO-Code;Kurzbez;Bezeichnung;Nationalität;Bezeichnung lang
-      @@codes = CSV.read("#{gem_root}/countries.csv", :col_sep => ";").inject({}){|a,b| a.merge!({b[0] => b[5]})}
+      @@codes = CSV.read("countries.csv", :col_sep => ";").inject({}){|a,b| a.merge!({b[0] => b[5]})}
 
       def self.short_name_for(name)
         @@codes.select{|k,v| v.downcase == name.downcase}.try(:first).try(:first)

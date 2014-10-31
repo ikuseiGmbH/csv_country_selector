@@ -1,6 +1,6 @@
 # CsvCountrySelector
 
-TODO: Write a gem description
+List of countries and depending shortnames of an SAP Server to Match human readable names.
 
 ## Installation
 
