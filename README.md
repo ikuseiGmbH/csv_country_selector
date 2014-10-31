@@ -20,7 +20,25 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+CsvCountrySelector::Country.short_name_for("Deutschland")  => "DE"
+```
+
+```ruby
+CsvCountrySelector::Country.long_name_for("de")  => "Deutschland"
+```
+
+```ruby
+CsvCountrySelector::Country.long_list  => ["Deutschland", "USA", ..]
+```
+
+```ruby
+CsvCountrySelector::Country.short_list  => ["DE", "AT", ..]
+```
+
+```ruby
+CsvCountrySelector::Country.codes  => {:de => "Deutschland", :at => "Österreich", ...}
+```
 
 ## Contributing
 

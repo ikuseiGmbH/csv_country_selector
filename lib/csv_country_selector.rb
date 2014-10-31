@@ -13,12 +13,12 @@ module CsvCountrySelector
       @@codes = CSV.read("#{gem_root}/countries.csv", :col_sep => ";").inject({}){|a,b| a.merge!({b[0] => b[5]})}
 
       def self.short_name_for(name)
-        @@codes.select{|k,v| v == name}.try(:first).try(:first)
+        @@codes.select{|k,v| v.downcase == name.downcase}.try(:first).try(:first)
       end
 
 
       def self.long_name_for(name)
-        @@codes.select{|k,v| k == name}.try(:first).try(:last)
+        @@codes.select{|k,v| k.downcase == name.downcase}.try(:first).try(:last)
       end
 
       def self.long_list
