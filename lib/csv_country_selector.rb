@@ -28,7 +28,7 @@ module CsvCountrySelector
     end
 
     def self.short_list
-      @@codes.values
+      @@codes.keys
     end
 
     def self.codes
@@ -36,7 +36,7 @@ module CsvCountrySelector
     end
 
     def self.is_in_eu?(country_short_name)
-      @@eu_codes.values.include?(country_short_name)
+      @@eu_codes.keys.include?(country_short_name.upcase)
     end
 
   end
