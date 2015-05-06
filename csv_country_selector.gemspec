@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Marco Metz"]
   spec.email         = ["marco.metz@gmail.com"]
   spec.summary       = %q{Country List with long and short names}
-  spec.description   = %q{Country list based on a csv file wit long an short names for Dropdowns and selections}
+  spec.description   = %q{Country list based on a csv file with long an short names for Dropdowns and selections}
   spec.homepage      = "https://github.com/ikuseiGmbH/csv_country_selector"
   spec.license       = "MIT"
 
