@@ -40,6 +40,13 @@ CsvCountrySelector::Country.short_list  => ["DE", "AT", ..]
 CsvCountrySelector::Country.codes  => {:de => "Deutschland", :at => "Österreich", ...}
 ```
 
+```ruby
+CsvCountrySelector::Country.is_in_eu?("de")  => true
+CsvCountrySelector::Country.is_in_eu?("DE")  => true
+CsvCountrySelector::Country.is_in_eu?("us")  => false
+```
+
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/csv_country_selector/fork )
