@@ -1,6 +1,6 @@
 # CsvCountrySelector
 
-List of countries and depending shortnames of an SAP Server to Match human readable names.
+Provide helpers and selectors for an German country and language list based on a csv file.
 
 ## Installation
 
@@ -25,32 +25,39 @@ CsvCountrySelector::Country.short_name_for("Deutschland")  => "DE"
 ```
 
 ```ruby
-CsvCountrySelector::Country.long_name_for("de")  => "Deutschland"
+CsvCountrySelector::Country.long_name_for("de") => "Deutschland"
 ```
 
 ```ruby
-CsvCountrySelector::Country.long_list  => ["Deutschland", "USA", ..]
+CsvCountrySelector::Country.long_list => ["Deutschland", "USA", ..]
 ```
 
 ```ruby
-CsvCountrySelector::Country.short_list  => ["DE", "AT", ..]
+CsvCountrySelector::Country.short_list => ["DE", "AT", ..]
 ```
 
 ```ruby
-CsvCountrySelector::Country.codes  => {:de => "Deutschland", :at => "Österreich", ...}
+CsvCountrySelector::Country.codes => { de: "Deutschland", at: "Österreich", ... }
 ```
 
 ```ruby
-CsvCountrySelector::Country.is_in_eu?("de")  => true
-CsvCountrySelector::Country.is_in_eu?("DE")  => true
-CsvCountrySelector::Country.is_in_eu?("us")  => false
+CsvCountrySelector::Country.is_in_eu?("de") => true
 ```
+
+```ruby
+CsvCountrySelector::Country.is_in_eu?("DE") => true
+```
+
+```ruby
+CsvCountrySelector::Country.is_in_eu?("US") => false
+```
+
+## Development
 
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/csv_country_selector/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
